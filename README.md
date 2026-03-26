@@ -77,18 +77,24 @@ WHERE
     award = 'Actor in a Leading Role'
     AND year = 2015
     AND winner = 1.0;
+'''
 
+```sql
 SELECT * 
 FROM movies 
 WHERE release_date 
 IS NOT NULL ORDER BY release;
 
+```
+
 SELECT COUNT(DISTINCT award)
 FROM oscars;
-
+```
+```sql
 SELECT COUNT(title)
 FROM movies
 WHERE title LIKE '%spider%';
+```
 
 SELECT COUNT(DISTINCT movies.movie_id)
 FROM movies
@@ -98,6 +104,7 @@ JOIN keywordmap ON movies.movie_id = keywordmap.movie_id
 JOIN keywords ON keywordmap.keyword_id = keywords.keyword_id
 WHERE genres.genre_name = 'Thriller'
   AND keywords.keyword_name LIKE '%love%';
+```
 
 SELECT COUNT(release_date)
 FROM movies
